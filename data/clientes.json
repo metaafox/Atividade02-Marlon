@@ -1,0 +1,22 @@
+{
+    "cliente_A01": {"nome": "João Silva", "coordenadas": [2.5, 3.1]},
+    "cliente_A02": {"nome": "Maria Santos", "coordenadas": [15.2, 8.7]},
+    "cliente_A03": {"nome": "Pedro Costa", "coordenadas": [6.0, 1.5]},
+    "cliente_A04": {"nome": "Ana Oliveira", "coordenadas": [10.1, 19.9]},
+    "cliente_A05": {"nome": "Carlos Souza", "coordenadas": [0.5, 0.5]},
+    "cliente_A06": {"nome": "Sofia Lima", "coordenadas": [8.8, 12.3]},
+    "cliente_A07": {"nome": "Rafaela Mendes", "coordenadas": [1.0, 1.0]},
+    "cliente_A08": {"nome": "Daniel Pereira", "coordenadas": [19.5, 1.2]},
+    "cliente_A09": {"nome": "Gabriela Alves", "coordenadas": [12.0, 15.0]},
+    "cliente_A10": {"nome": "Lucas Ferreira", "coordenadas": [5.5, 9.2]},
+    "cliente_A11": {"nome": "Beatriz Rocha", "coordenadas": [18.0, 18.0]},
+    "cliente_A12": {"nome": "Vitor Gomes", "coordenadas": [3.3, 6.7]},
+    "cliente_A13": {"nome": "Larissa Barbosa", "coordenadas": [9.1, 4.0]},
+    "cliente_A14": {"nome": "Eduardo Dias", "coordenadas": [14.0, 11.5]},
+    "cliente_A15": {"nome": "Mônica Castro", "coordenadas": [4.0, 16.0]},
+    "cliente_A16": {"nome": "Felipe Morais", "coordenadas": [17.5, 5.0]},
+    "cliente_A17": {"nome": "Julia Martins", "coordenadas": [7.0, 7.0]},
+    "cliente_A18": {"nome": "Guilherme Nunes", "coordenadas": [1.8, 14.2]},
+    "cliente_A19": {"nome": "Camila Ribeiro", "coordenadas": [16.5, 13.5]},
+    "cliente_A20": {"nome": "Thiago Lopes", "coordenadas": [11.0, 0.8]}
+}

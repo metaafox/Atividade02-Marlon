@@ -1,0 +1,77 @@
+{
+  "galpao_01": {
+    "nome": "Galpão Central",
+    "coordenadas": [5.0, 5.0],
+    "status": "Livre"
+  },
+  "galpao_02": {
+    "nome": "Galpão Norte",
+    "coordenadas": [15.0, 15.0],
+    "status": "Livre"
+  },
+  "galpao_03": {
+    "nome": "Galpão Sul",
+    "coordenadas": [5.0, 15.0],
+    "status": "Cheio"
+  },
+  "galpao_04": {
+    "nome": "Galpão Leste",
+    "coordenadas": [15.0, 5.0],
+    "status": "Livre"
+  },
+  "galpao_05": {
+    "nome": "Galpão Oeste",
+    "coordenadas": [1.0, 10.0],
+    "status": "Livre"
+  },
+  "galpao_06": {
+    "nome": "Hub Metropolitano",
+    "coordenadas": [10.0, 10.0],
+    "status": "Livre"
+  },
+  "galpao_07": {
+    "nome": "Ponto de Apoio A",
+    "coordenadas": [3.0, 3.0],
+    "status": "Livre"
+  },
+  "galpao_08": {
+    "nome": "Ponto de Apoio B",
+    "coordenadas": [17.0, 17.0],
+    "status": "Cheio"
+  },
+  "galpao_09": {
+    "nome": "Ponto de Apoio C",
+    "coordenadas": [8.0, 2.0],
+    "status": "Livre"
+  },
+  "galpao_10": {
+    "nome": "Ponto de Apoio D",
+    "coordenadas": [12.0, 1.0],
+    "status": "Livre"
+  },
+  "galpao_11": {
+    "nome": "Região Industrial 1",
+    "coordenadas": [7.5, 18.0],
+    "status": "Livre"
+  },
+  "galpao_12": {
+    "nome": "Região Industrial 2",
+    "coordenadas": [18.5, 8.0],
+    "status": "Livre"
+  },
+  "galpao_13": {
+    "nome": "Região Industrial 3",
+    "coordenadas": [2.0, 18.0],
+    "status": "Cheio"
+  },
+  "galpao_14": {
+    "nome": "Ponto de Transbordo",
+    "coordenadas": [10.0, 15.0],
+    "status": "Livre"
+  },
+  "galpao_15": {
+    "nome": "Entrega Rápida",
+    "coordenadas": [1.0, 1.0],
+    "status": "Livre"
+  }
+}
