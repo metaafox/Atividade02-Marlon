@@ -1,47 +1,42 @@
 import math
-import json
-import os
+# Não é necessário 'json' ou 'os' aqui, pois os dados já chegam processados.
 
-# --- FUNÇÃO 1: CÁLCULO MATEMÁTICO ---
-def calcula_distancia(ponto_a: list, ponto_b: list) -> float:
-    distancia_quadrada = (ponto_a[0] - ponto_b[0])**2 + \
-                         (ponto_a[1] - ponto_b[1])**2
-    return math.sqrt(distancia_quadrada)
-
-# --- FUNÇÃO 2: LÓGICA DE NEGÓCIO ---
-def encontra_melhor_galpao(cliente_id: str) -> dict:
-    base_dir = os.path.dirname(os.path.dirname(__file__))
+# --- FUNÇÃO PRINCIPAL DE CÁLCULO (WORKER PURO) ---
+def lambda_calcular_distancia(dados: dict) -> list:
+    """
+    Recebe a lista de pontos e calcula a distância Euclidiana para cada par.
+    Simula a Lambda de Cálculo.
+    """
+    resultados = []
     
-    try:
-        with open(os.path.join(base_dir, 'data', 'clientes.json'), 'r') as f:
-            clientes_db = json.load(f)
-        with open(os.path.join(base_dir, 'data', 'galpoes.json'), 'r') as f:
-            galpoes_db = json.load(f)
-    except FileNotFoundError:
-        return {"erro": "Arquivos de dados não encontrados."}
-        
-    # 2. Obter coordenadas do cliente
-    if cliente_id not in clientes_db:
-        return {"erro": f"Cliente '{cliente_id}' não encontrado."}
+    # Função auxiliar de cálculo matemático
+    def calcula_distancia(p1: list, p2: list) -> float:
+        x1, y1 = p1
+        x2, y2 = p2
+        return math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
 
-    coords_cliente = clientes_db[cliente_id]['coordenadas']
-    
-    # 3. Iterar sobre galpões e encontrar o mais próximo
-    melhor_distancia = float('inf')
-    galpao_selecionado = None
-    
-    for id_galpao, dados_galpao in galpoes_db.items():
-        coords_galpao = dados_galpao['coordenadas']
+    for ponto in dados.get('pontos', []):
+        distancia = calcula_distancia(ponto['cliente_coord'], ponto['galpao_coord'])
         
-        # Chama a Função 1
-        distancia = calcula_distancia(coords_cliente, coords_galpao)
-        
-        if distancia < melhor_distancia:
-            melhor_distancia = distancia
-            galpao_selecionado = {
-                "id": id_galpao,
-                "nome": dados_galpao['nome'],
-                "distancia": round(melhor_distancia, 2)
-            }
+        resultados.append({
+            "id": ponto['galpao_id'],
+            "nome": ponto['galpao_nome'],
+            "distancia": round(distancia, 2)
+        })
 
-    return galpao_selecionado
+    return resultados
+
+
+# --- FUNÇÃO DE DECISÃO FINAL (WORKER DECISOR) ---
+def lambda_selecionar_vencedor(resultados_calculo: list) -> dict:
+    """
+    Recebe a lista de distâncias e seleciona o galpão com a menor distância.
+    Simula a Lambda Decisora.
+    """
+    if not resultados_calculo:
+        return {"erro": "Nenhum resultado de cálculo recebido."}
+        
+    # Encontra o galpão com a menor distância (Otimização: min() com chave lambda)
+    melhor_galpao = min(resultados_calculo, key=lambda x: x['distancia'])
+    
+    return melhor_galpao
