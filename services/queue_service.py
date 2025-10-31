@@ -4,7 +4,7 @@ FILA_DE_PROCESSAMENTO = []
 def enviar_para_fila(dados: dict):
     """
     Simula o envio de uma mensagem para a fila (Producer).
-    Em um ambiente real, usaria boto3 para AWS SQS ou RabbitMQ.
+    Em um ambiente real, usaria boto3 para AWS SQS.
     """
     print(f"   [FILA] -> Novo trabalho adicionado à fila: {dados['cliente_id']}")
     FILA_DE_PROCESSAMENTO.append(dados)

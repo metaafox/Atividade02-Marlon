@@ -1,7 +1,6 @@
 import math
-# Não é necessário 'json' ou 'os' aqui, pois os dados já chegam processados.
 
-# --- FUNÇÃO PRINCIPAL DE CÁLCULO (WORKER PURO) ---
+# --- FUNÇÃO PRINCIPAL DE CÁLCULO ---
 def lambda_calcular_distancia(dados: dict) -> list:
     """
     Recebe a lista de pontos e calcula a distância Euclidiana para cada par.
@@ -27,7 +26,7 @@ def lambda_calcular_distancia(dados: dict) -> list:
     return resultados
 
 
-# --- FUNÇÃO DE DECISÃO FINAL (WORKER DECISOR) ---
+# --- FUNÇÃO DE DECISÃO FINAL  ---
 def lambda_selecionar_vencedor(resultados_calculo: list) -> dict:
     """
     Recebe a lista de distâncias e seleciona o galpão com a menor distância.
