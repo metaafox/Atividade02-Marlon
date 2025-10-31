@@ -1,7 +1,6 @@
 from core.calculos import lambda_calcular_distancia, lambda_selecionar_vencedor
 from core.utilidades import carregar_dados_json
 
-# A lógica de buscar dados não está aqui, pois ela seria prévia ao envio para a fila
 # A Lambda aqui simula o Processamento Pesado.
 
 def processar_item_logistica(dados_trabalho: dict):
@@ -19,7 +18,7 @@ def processar_item_logistica(dados_trabalho: dict):
         print(f"   [WORKER] Erro: Não foi possível carregar o DB de galpões.")
         return
 
-    # Preparar dados para o cálculo (Simula o Lambda 1)
+    # Preparar dados para o cálculo
     pontos_para_calcular = []
     for galpao_id, dados_galpao in galpoes_db.items():
         if dados_galpao.get('status') == 'Livre':
@@ -40,7 +39,7 @@ def processar_item_logistica(dados_trabalho: dict):
     # SIMULAÇÃO STEP 3: SELECIONAR VENCEDOR
     resultado_final = lambda_selecionar_vencedor(resultados_calculo)
     
-    # Saída do Worker (Poderia ser um log ou uma notificação)
+    # Saída do Worker
     print("\n✅ Decisão de Roteamento Assíncrono Concluída:")
     print(f"  -> Cliente: {cliente_id}")
     print(f"  -> Galpão Selecionado: **{resultado_final['nome']}** ({resultado_final['id']})")
